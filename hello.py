@@ -1,5 +1,6 @@
 import requests
+import json
+
 
 def handler(event, context):
-    r = requests.get("https://news.ycombinator.com/news")
-    return {"content": r.text}
+    return {"statusCode": 200, "body": json.dumps({"message": "I'm an HTTP response"})}

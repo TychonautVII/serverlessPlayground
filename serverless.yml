@@ -60,8 +60,12 @@ provider:
 functions:
   hello:
     handler: handler.hello
-  demo:
+  webapi:
     handler: hello.handler
+    events:
+      - http:
+          path: /
+          method: get
 
 plugins:
   - serverless-python-requirements
